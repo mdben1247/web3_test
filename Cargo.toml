@@ -1,0 +1,12 @@
+[package]
+name = "web3_benchmark"
+version = "0.1.0"
+
+[dependencies]
+clap = "2"
+rand = "0.7"
+
+[dependencies.web3]
+version = "0.11"
+default-features = false 
+features = ["ws"]
