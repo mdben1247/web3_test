@@ -347,7 +347,7 @@ fn run_query_state_on_new_block(name: &str, web3_addr: String, timer: Arc<RwLock
                 "...{:<10}: block {} processing, last: {:>7.1} ms, avg: {:>7.1} ms, num iter: {}", 
                 name,
                 block_number,
-                timer.last.unwrap_or(0_f64), 
+                timer.last.unwrap_or(0_f64) * 1000_f64, 
                 timer.total / timer.num as f64 * 1000_f64,
                 timer.num
             );
@@ -407,7 +407,7 @@ fn run_get_logs_on_new_block(name: &str, web3_addr: String, timer: Arc<RwLock<Ti
                 name,
                 logs.len(),
                 block_number,
-                timer.last.unwrap_or(0_f64), 
+                timer.last.unwrap_or(0_f64) * 1000_f64, 
                 timer.total / timer.num as f64 * 1000_f64,
                 timer.num
             );
